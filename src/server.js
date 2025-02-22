@@ -1,16 +1,16 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import bodyParser from "body-parser";
-import crypto from "crypto";
-import { createClient } from '@supabase/supabase-js';
+// import crypto from "crypto";
+// import { createClient } from '@supabase/supabase-js';
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const secret = process.env.SECRET_KW_TOKEN;
+// const secret = process.env.SECRET_KW_TOKEN;
 // Configurando Supabase
-const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
+// const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
 // Middleware para processar JSON
 app.use(express.json());
