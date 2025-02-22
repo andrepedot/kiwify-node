@@ -20,20 +20,20 @@ app.post('/webhook', bodyParser.raw({ type: 'application/json' }),
     async (req, res) => {
         console.log("BODY: ", req.body)
         // receive order's data
-        let order = {};
-        try {
-            order = JSON.parse(req.body);
-        } catch (error) {
-            return res.status(400).send({ error });
-        }
+        // let order = {};
+        // try {
+        //     order = JSON.parse(req.body);
+        // } catch (error) {
+        //     return res.status(400).send({ error });
+        // }
 
-        // verify signature
-        const { signature } = req.query;
-        const calculatedSignature = crypto.createHmac('sha1', secret)
-            .update(JSON.stringify(order)).digest('hex');
-        if (signature !== calculatedSignature) {
-            return res.status(400).send({ error: 'Incorrect signature' });
-        }
+        // // verify signature
+        // const { signature } = req.query;
+        // const calculatedSignature = crypto.createHmac('sha1', secret)
+        //     .update(JSON.stringify(order)).digest('hex');
+        // if (signature !== calculatedSignature) {
+        //     return res.status(400).send({ error: 'Incorrect signature' });
+        // }
 
         // do any job with received order's data
         console.log('Received order:', order);
