@@ -16,12 +16,9 @@ const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY
 app.use(express.json());
 
 // Rota para o webhook
-app.all('/webhook', bodyParser.raw({ type: 'application/json' }),
+app.post('/webhook', bodyParser.raw({ type: 'application/json' }),
     async (req, res) => {
-        // handle HEAD request
-        if (req.method !== 'POST') {
-            return res.status(200).send({ status: 'ok' });
-        }
+        console.log("BODY: ", req.body)
         // receive order's data
         let order = {};
         try {
