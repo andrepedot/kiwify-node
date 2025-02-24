@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 // import crypto from "crypto";
 // import { createClient } from '@supabase/supabase-js';
 
@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware para processar JSON
 app.use(express.json());
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 // Rota para o webhook
 app.post('/webhook', async (req, res) => {
     console.log("BODY: ", req.body)
