@@ -17,7 +17,7 @@ app.use(express.json());
 // app.use(bodyParser.json());
 // Rota para o webhook
 app.post('/webhook', async (req, res) => {
-    console.log("BODY: ", req.body)
+    console.log("BODY: ", req)
     // receive order's data
     // let order = {};
     // try {
